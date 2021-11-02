@@ -7,7 +7,7 @@ namespace Problema_Coloreado_Grafos
     {
         private static void Main(string[] args)
         {
-            var rellenar = new int[10, 10];
+            var rellenar = new int[10,10];
             var filas = rellenar.GetLength(0);
             var columnas = rellenar.GetLength(1);
             for (var x = 0; x < filas; x++)
@@ -17,14 +17,14 @@ namespace Problema_Coloreado_Grafos
                     var adyacencias = EncontrarAdyacencias(new []{x, y}, new []{filas, columnas});
                     var colores = ColoresAdyacentes(rellenar, adyacencias);
                     
-                    for (var i = 1; i <= adyacencias.Count; i++)
+                    for (var i = 0; i <= colores.Count; i++)
                     {
-                        if (colores.Contains(i))
+                        if (colores.Contains(i+1))
                         {
                             continue;
                         }
 
-                        rellenar[x, y] = i;
+                        rellenar[x, y] = i+1;
                         break;
                     }
                     
